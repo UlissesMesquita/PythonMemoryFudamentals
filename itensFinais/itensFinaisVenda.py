@@ -1,3 +1,4 @@
+
 #Taxa dos dados
 valoresTaxas = []
 
@@ -61,7 +62,6 @@ if valorPretendido == 0 or valorPretendido == None:
     txComissao10 = (total / difPerFaltante) * (percerntualComissao10 / 100)
     txImposto = (total / difPerFaltante) * (percentualImposto / 100)
     txImpostoParcialDiretoria = (total / difPerFaltante) * (percentualParcialDiretoria / 100)
-    print(txBvAgencia1)
     
 else:
     total = valorPretendido
@@ -92,29 +92,25 @@ somatoriaImpostos = (
     txImpostoParcialDiretoria)
 
 
-
 somatoriaSemDesconto = totalOrcado + somatoriaImpostos
-
 
 
 descontoFinanceiro = abs((valorPretendido) * (1 - somaPercentualDespesa) - totalOrcado)
 
 
-#visualização Venda
-print("############ RESULTADOS VENDAS ##############")
+#Visualização Venda
+print("############ RESULTADOS VENDA ##############")
 
+#Subtotais Venda
 print("\n ############ SUBTOTAL ##############")
-
-#subtotal
-print("subTotal: " , subTotal)
 print("difPerFaltante: " , difPerFaltante)
 print("somatoriaSemDesconto: " , somatoriaSemDesconto)
 print("percentualTaxaProdutora: " , percentualTaxaProdutora)
 print("descontoFinanceiro: " , descontoFinanceiro)
+print("subTotalCompra: ", subTotal)
 
+#Percentuais
 print("\n ############ PERCENTUAIS ##############")
-
-#percentuais
 print("percentualBv1: " , percentualBv1)
 print("percentualBv2: " , percentualBv2)
 print("percentualBv3: " , percentualBv3)
@@ -127,9 +123,7 @@ print("percentualImposto: " , percentualImposto)
 print("percentualParcialDiretoria: " , percentualParcialDiretoria)
 print("valorPretendido: " , valorPretendido)
 
-print("\n ######## TAXAS RESPECTIVAS ########")
-
-#taxas Respectivas
+#Taxas Respectivas
 print("txBvAgencia1: " , txBvAgencia1)
 print("txBvAgencia2: " , txBvAgencia2)
 print("txBvAgencia3: " , txBvAgencia3)
@@ -144,6 +138,8 @@ print("totalOrcado: " , totalOrcado)
 print("taxaProdutora: " , taxaProdutora)
 
 print("######## FIM RESULTADOS VENDA ########")
+
+
 
 print("\n######## INÍCIO RESULTADOS COMPRA ########")
 
@@ -204,16 +200,15 @@ somatoriaCompra = (
 )
 
 
-#visualização Compra
+#Visualização Compra
 print("############ RESULTADOS COMPRAS ##############")
 
-#subtotal
+#Subtotais Compra
 print("\n ############ SUBTOTAL ##############")
 print("somatoriaCompra: ", somatoriaCompra)
 print("subTotalCompra: ", subTotalCompra)
 
-
-#percentuais
+#Percentuais
 print("\n ############ PERCENTUAIS ##############")
 print("percentualBvAgencia1Compra: ", percentualBv1Compra)
 print("percentualBvAgencia2Compra: ", percentualBv2Compra)
@@ -226,12 +221,12 @@ print("percentualNca10: ", percerntualComissao10Compra)
 print("percentualImpostoCompra: ", percentualImpostoCompra)
 print("percentualParcialDiretoriaCompra: ", percentualParcialDiretoriaCompra)
 
-#taxas Respectivas
+#Taxas Respectivas
 print("\n ######## TAXAS RESPECTIVAS ########")
 print("txBvAgencia1Compra: ", txBvAgencia1Compra)
 print("txBvAgencia2Compra: ", txBvAgencia2Compra)
 print("txBvAgencia3Compra: ", txBvAgencia3Compra)
-print("txConsultoria: ", txConsultoria)
+print("txConsultoriaCompra: ", txConsultoriaCompra)
 print("txComissao1Compra: ", txComissao1Compra)
 print("txComissao2Compra: ", txComissao2Compra)
 print("txComissao5Compra: ", txComissao5Compra)
@@ -241,3 +236,65 @@ print("txDirCompra: ", txDirCompra)
 
 
 print("######## FIM RESULTADOS COMPRA ########")
+
+
+#Margem Bruta Valor
+margemBrutaValorCompraBvAgencia1 = float((txBvAgencia1 - txBvAgencia1Compra))
+margemBrutaValorCompraBvAgencia2 = float((txBvAgencia2 - txBvAgencia2Compra))
+margemBrutaValorCompraBvAgencia3 = float((txBvAgencia3 - txBvAgencia3Compra))
+margemBrutaValorCompraConsultoria = float((txConsultoria - txConsultoriaCompra))
+margemBrutaValorCompraComissao1 = float((txComissao1 - txComissao1Compra))
+margemBrutaValorCompraComissao2 = float((txComissao2 - txComissao2Compra))
+margemBrutaValorCompraComissao5 = float((txComissao5 - txComissao5Compra))
+margemBrutaValorCompraComissao10 = float((txComissao10 - txComissao10Compra))
+margemBrutaValorCompraImposto = float((txImposto - txImpostoCompra))
+margemBrutaValorCompraParcialDiretoria = float((txImpostoParcialDiretoria - txDirCompra))
+margemBrutaValorTotalCompra = float((somatoriaSemDesconto - somatoriaCompra))
+
+#Margem Bruta Percentual
+
+margemBrutaPercentualCompraBvAgencia1 = float((txBvAgencia1 / txBvAgencia1Compra) * 100)
+margemBrutaPercentualCompraBvAgencia2 = float((txBvAgencia2 / txBvAgencia2Compra) * 100)
+margemBrutaPercentualCompraBvAgencia3 = float((txBvAgencia3 / txBvAgencia3Compra) * 100)
+margemBrutaPercentualCompraConsultoria = float((txConsultoria / txConsultoriaCompra) * 100)
+margemBrutaPercentualCompraComissao1 = float((txComissao1 / txComissao1Compra) * 100)
+margemBrutaPercentualCompraComissao2 = float((txComissao2 / txComissao2Compra) * 100)
+margemBrutaPercentualCompraComissao5 = float((txComissao5 / txComissao5Compra) * 100)
+margemBrutaPercentualCompraComissao10 = float((txComissao10 / txComissao10Compra) * 100)
+margemBrutaPercentualCompraImposto = float((txImposto / txImpostoCompra) * 100)
+margemBrutaPercentualCompraParcialDiretoria = float((txImpostoParcialDiretoria / txDirCompra) * 100)
+margemBrutaPercentualTotalCompra = float((somatoriaSemDesconto / somatoriaCompra) * 100)
+
+
+print("######## MARGEM BRUTA PERCENTUAL ########")
+
+print("margemBrutaPercentualCompraBvAgencia1: ", margemBrutaPercentualCompraBvAgencia1)
+print("margemBrutaPercentualCompraBvAgencia2: ", margemBrutaPercentualCompraBvAgencia2)
+print("margemBrutaPercentualCompraBvAgencia3: ", margemBrutaPercentualCompraBvAgencia3)
+print("margemBrutaPercentualCompraConsultoria: ", margemBrutaPercentualCompraConsultoria)
+print("margemBrutaPercentualCompraComissao1: ", margemBrutaPercentualCompraComissao1)
+print("margemBrutaPercentualCompraComissao2: ", margemBrutaPercentualCompraComissao2)
+print("margemBrutaPercentualCompraComissao5: ", margemBrutaPercentualCompraComissao5)
+print("margemBrutaPercentualCompraComissao10: ", margemBrutaPercentualCompraComissao10)
+print("margemBrutaPercentualCompraImposto: ", margemBrutaPercentualCompraImposto)
+print("margemBrutaPercentualCompraParcialDiretoria: ", margemBrutaPercentualCompraParcialDiretoria)
+print("margemBrutaPercentualTotalCompra: ", margemBrutaPercentualTotalCompra)
+
+
+
+print("######## MARGEM BRUTA VALOR ########")
+
+print("margemBrutaValorCompraBvAgencia1: ", margemBrutaValorCompraBvAgencia1)
+print("margemBrutaValorCompraBvAgencia2: ", margemBrutaValorCompraBvAgencia2)
+print("margemBrutaValorCompraBvAgencia3: ", margemBrutaValorCompraBvAgencia3)
+print("margemBrutaValorCompraConsultoria: ", margemBrutaValorCompraConsultoria)
+print("margemBrutaValorCompraComissao1: ", margemBrutaValorCompraComissao1)
+print("margemBrutaValorCompraComissao2: ", margemBrutaValorCompraComissao2)
+print("margemBrutaValorCompraComissao5: ", margemBrutaValorCompraComissao5)
+print("margemBrutaValorCompraComissao10: ", margemBrutaValorCompraComissao10)
+print("margemBrutaValorCompraImposto: ", margemBrutaValorCompraImposto)
+print("margemBrutaValorCompraParcialDiretoria: ", margemBrutaValorCompraParcialDiretoria)
+print("margemBrutaValorTotalCompra: ", margemBrutaValorTotalCompra)
+
+
+print("######## FIM MARGEM BRUTA ########")
